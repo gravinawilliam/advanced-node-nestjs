@@ -11,11 +11,37 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "paths": {
+      "@application/*": [
+        "./src/application/*"
+      ],
+      "@dtos/*": [
+        "./src/domain/dtos/*"
+      ],
+      "@models/*": [
+        "./src/domain/models/*"
+      ],
+      "@domain/*": [
+        "./src/domain/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@fakes/*": [
+        "./src/fakes/*"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
+      ],
+      "@main/*": [
+        "./src/main/*"
+      ]
+    }
   }
 }
