@@ -1,0 +1,13 @@
+# Quando trocar essa versão do node, trocar também no arquivo .nvmrc
+FROM node:16.13.2-alpine
+
+RUN apk add --no-cache bash
+
+RUN npm install -g @nestjs/cli@8.0.0
+RUN npm config set cache /home/node/app/advanced-node-nestjs/.npm-cache --global
+
+RUN mkdir -p /home/node/app/advanced-node-nestjs
+
+USER node
+
+WORKDIR /home/node/app/advanced-node-nestjs

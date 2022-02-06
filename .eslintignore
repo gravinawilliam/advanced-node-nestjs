@@ -1,0 +1,4 @@
+sonar-project.js
+dist/
+node_modules/
+jest.config.ts

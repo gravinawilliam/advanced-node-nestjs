@@ -11,6 +11,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+.env
+
+package-lock.json
+
 # OS
 .DS_Store
 
@@ -33,3 +37,4 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+yarn.lock
