@@ -6,17 +6,19 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "esModuleInterop": true,
     "incremental": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strict": true,
     "paths": {
       "@application/*": [
         "./src/application/*"

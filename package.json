@@ -4,6 +4,9 @@
   "description": "",
   "author": "Will Gravina",
   "private": true,
+  "engines": {
+    "node": "16.13.2"
+  },
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -23,6 +26,7 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@sentry/node": "^6.17.4",
     "dotenv": "^16.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
