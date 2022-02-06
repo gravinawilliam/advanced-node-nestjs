@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  advanced-node-nestjs:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.local
+    entrypoint: ./entrypoint.sh
+    container_name: advanced-node-nestjs
+    image: blog-article:latest
+    environment:
+      ADVANCED_NODE_NESTJS_PORT: ${ADVANCED_NODE_NESTJS_PORT}
+      NODE_ENV: ${NODE_ENV}
+    ports:
+      - "${ADVANCED_NODE_NESTJS_PORT}:${ADVANCED_NODE_NESTJS_PORT}"
+    networks:
+      - will-net
+    volumes:
+      - .:/home/node/app/advanced-node-nestjs
+
+networks:
+  will-net:
+    external: true
