@@ -29,6 +29,9 @@
       "@models/*": [
         "./src/domain/models/*"
       ],
+      "@errors/*": [
+        "./src/domain/errors/*"
+      ],
       "@domain/*": [
         "./src/domain/*"
       ],
