@@ -4,12 +4,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  plugins: [
-    '@typescript-eslint',
-    'prettier',
-    'eslint-plugin-import-helpers',
-    'sonarjs',
-  ],
+  plugins: ['@typescript-eslint', 'prettier', 'eslint-plugin-import-helpers', 'sonarjs'],
   extends: [
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
@@ -24,6 +19,14 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'interface',
+        format: ['PascalCase'],
+        prefix: ['I'],
+      },
+    ],
     '@typescript-eslint/no-explicit-any': 'off',
     'prettier/prettier': 'error',
     '@typescript-eslint/no-namespace': 'off',
@@ -47,6 +50,7 @@ module.exports = {
           '/^@application/',
           '/^@domain/',
           '/^@dtos/',
+          '/^@errors/',
           '/^@models/',
           '/^@fakes/',
           '/^@infra/',
