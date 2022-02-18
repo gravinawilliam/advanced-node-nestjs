@@ -1,3 +1,7 @@
+import { UuidGeneratorError } from '@errors/uuid-generator.error';
+
+import { Either } from '@shared/utils/either';
+
 export namespace SaveFacebookAccountRepositoryDTO {
   export type Params = {
     id?: string;
@@ -6,5 +10,12 @@ export namespace SaveFacebookAccountRepositoryDTO {
     facebookId: string;
   };
 
-  export type Result = Promise<void>;
+  export type Result = Promise<
+    Either<
+      UuidGeneratorError,
+      {
+        id: string;
+      }
+    >
+  >;
 }

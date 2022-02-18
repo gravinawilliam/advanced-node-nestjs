@@ -6,8 +6,32 @@ const config: Config.InitialOptions = {
   verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'node',
+  // transform: {
+  //   '\\.ts$': 'ts-jest',
+  // },
   transform: {
-    '\\.ts$': 'ts-jest',
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
+      {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: false,
+            decorators: true,
+          },
+          target: 'es2021',
+          keepClassNames: true,
+          transform: {
+            legacyDecorator: true,
+            decoratorMetadata: true,
+          },
+        },
+        module: {
+          type: 'es6',
+          noInterop: false,
+        },
+      },
+    ],
   },
   roots: ['<rootDir>/src'],
   clearMocks: true,

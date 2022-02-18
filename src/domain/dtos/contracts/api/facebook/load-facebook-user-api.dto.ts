@@ -1,3 +1,5 @@
+import { HttpClientRequestError } from '@errors/http-client-request.error';
+
 import { Either } from '@shared/utils/either';
 
 export namespace LoadFacebookUserApiDTO {
@@ -7,7 +9,7 @@ export namespace LoadFacebookUserApiDTO {
 
   export type Result = Promise<
     Either<
-      undefined,
+      HttpClientRequestError | undefined,
       {
         name: string;
         email: string;
