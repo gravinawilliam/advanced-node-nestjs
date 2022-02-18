@@ -1,10 +1,12 @@
 import { IEnvConfig } from '@domain/config/env.config';
+
 import 'dotenv/config';
+import packageJson from '../../../package.json';
 
 export const envConfig: IEnvConfig = {
   application: {
-    name: 'advanced-node-nestjs',
+    name: packageJson.version,
     nodeEnv: process.env.NODE_ENV as 'DEVELOPMENT' | 'PRODUCTION' | 'TEST' | 'LOCAL',
-    port: +process.env.ADVANCED_NODE_NESTJS_PORT ?? 2222,
+    port: 2222,
   },
 };
